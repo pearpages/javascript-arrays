@@ -1,4 +1,5 @@
-concat().example();
+// concat().example();
+joinSplitCharAt().example();
 
 function concat() {
     return {
@@ -39,5 +40,36 @@ function concat() {
         var people2 = [{ name: 'Simon' }, { name: 'Ben' }];
 
         people.concat(people2).forEach((v) => console.log(v.name));
+    }
+}
+
+function joinSplitCharAt() {
+
+    return {
+        example
+    }
+
+    function example() {
+        // Join
+
+        var names = ['Shane', 'Alan', 'Osbourne'];
+        console.log(names.join(' '));
+
+        var html = [];
+        html.push('<div>');
+        html.push('<p>Hello World!</p>');
+        html.push('</div>');
+
+        console.log(html.join(''));
+
+        // another example
+
+        var name = 'shane osbourne';
+
+        var res = name.split(' ')
+            .map((e) => e.charAt(0).toUpperCase() + e.slice(1))
+            .join(' ');
+
+        console.log(res);
     }
 }
