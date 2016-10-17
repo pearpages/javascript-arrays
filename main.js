@@ -1,5 +1,6 @@
 // concat().example();
-joinSplitCharAt().example();
+// joinSplitCharAt().example();
+indexOf().example();
 
 function concat() {
     return {
@@ -71,5 +72,62 @@ function joinSplitCharAt() {
             .join(' ');
 
         console.log(res);
+    }
+}
+
+function indexOf() {
+    return {
+        example
+    }
+
+    function example() {
+        // with strings
+
+        var family1 = ['Shane', 'Sally', 'Isaac', 'Kittie'];
+
+        function exists(group, value) {
+            return (group.indexOf(value) !== -1);
+        }
+
+        console.log(exists(family1, 'Kittie'));
+        console.log(exists(family1, 'John'));
+
+        // with objects
+
+        var shane = {
+            name: 'Shane'
+        }
+        var sally = {
+            name: 'Sally'
+        }
+        var kittie = {
+            name: 'Kittie'
+        }
+
+        var family2 = [shane, sally];
+
+        console.log(exists(family2, shane));
+        console.log(exists(family2, kittie));
+
+        // case example, filtering files
+
+        var whitelist = ['.css', '.js'];
+        var events = [
+            {
+                file: 'css/core.css'
+            },
+            {
+                file: 'js/app.js'
+            },
+            {
+                file: 'index.html'
+            }
+        ];
+
+        var filtered = events.filter((event) => {
+            var ext = require('path').extname(event.file);
+            return exists(whitelist, ext);
+        });
+        console.log(filtered);
     }
 }
