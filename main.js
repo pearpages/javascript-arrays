@@ -1,6 +1,7 @@
 // concat().example();
 // joinSplitCharAt().example();
-indexOf().example();
+// indexOf().example();
+slice().example();
 
 function concat() {
     return {
@@ -130,4 +131,33 @@ function indexOf() {
         });
         console.log(filtered);
     }
+}
+
+function slice() {
+
+    return {
+        example
+    }
+
+    function example() {
+        // slice lets us copy an array
+        // BUT it doesn't work well with objects, because it only copies the reference
+
+        var items = [1, 2, 3, 4, 5];
+        var copy = items.slice();
+
+        copy.push(6);
+
+        console.log(items, copy);
+
+        // for slicing you have to indicate the first and the last index, but the last index is not included
+
+        var items2 = [1, 2, 3, 4, 5];
+        console.log(items.slice(2)); // [3,4,5]
+        console.log(items.slice(2, 4)); // [3,4]
+        console.log(items.slice(2, 5)); // [3,4,5]
+        console.log(items.slice(-1)); // [5]
+        console.log(items.slice(-3)); // [3,4,5]
+    }
+
 }
