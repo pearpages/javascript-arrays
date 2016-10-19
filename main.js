@@ -1,7 +1,8 @@
 // concat().example();
 // joinSplitCharAt().example();
 // indexOf().example();
-slice().example();
+// slice().example();
+sort().example();
 
 function concat() {
     return {
@@ -160,4 +161,50 @@ function slice() {
         console.log(items.slice(-3)); // [3,4,5]
     }
 
+}
+
+function sort() {
+    return {
+        example
+    }
+
+    function example() {
+        // RETURNS the same array modified!
+
+        // it's useful for sorting strings, and strings only
+
+        var items = ['john', 'John', 'Mary', 'Paul']; // ['John','Mary','Paul','john']
+        console.log(items.sort());
+
+        // sorting numbers
+
+        var numbers = [134, 4545, 345, 98];
+        console.log(numbers.sort((a, b) => a - b)); // ascending
+        console.log(numbers.sort((a, b) => b - a)); // descending
+
+        // example
+
+        var lessons = [
+            {
+                title: 'lesson1',
+                views: 1000
+            },
+            {
+                title: 'lesson2',
+                views: 1050
+            },
+            {
+                title: 'lesson3',
+                views: 1025
+            }
+        ];
+
+        var list = lessons
+            .sort((a, b) => b.views - a.views) // descending
+            .map(x => `  <li>${x.title} (${x.views})</li>`)
+            .join('\n');
+
+        var output = `<ul>\n${list}\n</ul>`;
+        console.log(output);
+    }
 }
