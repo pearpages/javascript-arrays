@@ -2,7 +2,8 @@
 // joinSplitCharAt().example();
 // indexOf().example();
 // slice().example();
-sort().example();
+// sort().example();
+filter().example();
 
 function concat() {
     return {
@@ -206,5 +207,20 @@ function sort() {
 
         var output = `<ul>\n${list}\n</ul>`;
         console.log(output);
+    }
+}
+
+function filter() {
+    return {
+        example
+    }
+
+    function example() {
+        // creates a new array!
+        // the new array will content only the elements that return true
+
+        var items = [1, 2, 3, 4, 5];
+
+        console.log(items.filter(x => x > 3));
     }
 }
