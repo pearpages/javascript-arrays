@@ -3,7 +3,8 @@
 // indexOf().example();
 // slice().example();
 // sort().example();
-filter().example();
+// filter().example();
+some().example();
 
 function concat() {
     return {
@@ -222,5 +223,20 @@ function filter() {
         var items = [1, 2, 3, 4, 5];
 
         console.log(items.filter(x => x > 3));
+    }
+}
+
+function some() {
+
+    return {
+        example
+    }
+
+    function example() {
+        // check if there's at least one element in the array with the property asked
+
+        var elements = ['car', 'house', 'key', 'ball'];
+        console.log(elements.some((x) => x === 'key')); // true
+        console.log(elements.some((x) => x === 'plane')); // false
     }
 }
