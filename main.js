@@ -4,7 +4,8 @@
 // slice().example();
 // sort().example();
 // filter().example();
-some().example();
+// some().example();
+push().example();
 
 function concat() {
     return {
@@ -240,3 +241,26 @@ function some() {
         console.log(elements.some((x) => x === 'plane')); // false
     }
 }
+
+function push() {
+    return {
+        example
+    }
+
+    function example() {
+        // push modifies the current array but concat creates a new array
+        // it retuns the lenght of the array
+
+        var elements = [];
+        elements.push(1);
+        elements.push(2);
+        elements.push(3);
+        console.log(elements); // [1,2,3];
+        elements.push(4, 5, 6);
+        console.log(elements); // [1,2,3,4,5,6];
+
+        elements2 = [1, 2, 3, 4, 5, 6];
+        elements.push.apply(elements, elements2);
+        console.log(elements);
+    }
+} 
