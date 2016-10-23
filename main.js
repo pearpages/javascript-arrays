@@ -6,6 +6,7 @@
 // filter().example();
 // some().example();
 push().example();
+// every().example();
 
 function concat() {
     return {
@@ -264,3 +265,14 @@ function push() {
         console.log(elements);
     }
 } 
+
+function every() {
+
+    return {
+        example
+    }
+
+    function example() {
+        // checks that all the elements have the same property
+    }
+}
