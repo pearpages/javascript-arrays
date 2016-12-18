@@ -1,5 +1,35 @@
 # javascript-arrays
 
+## Basic
+
+```javascript
+var data = [
+    {symbol: "ABC", price: 140.22, volume: 54432 },
+    {symbol: "RTY", price: 532.19, volume: 134 },
+    {symbol: "FGH", price: 340.22, volume: 4323 }
+];
+
+// forEach
+function getStockSymbolsWithForEach(data) {
+    var res = [];
+
+    data.forEach(function (stock) {
+        res.push(stock.symbol);
+    });
+
+    return res;
+} 
+
+// map
+function getStockSymbolsWithMap(data) {
+    return data.map(function (stock) {
+        return stock.symbol;
+    });
+}
+```
+
+---
+
 ## Function Examples
 
 See */examples/main.js* if you want to run the examples.
