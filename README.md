@@ -10,10 +10,10 @@ var data = [
 ];
 
 // forEach
-function getStockSymbolsWithForEach(data) {
+function getStocksSymbolsWithForEach(stocks) {
     var res = [];
 
-    data.forEach(function (stock) {
+    stocks.forEach(function (stock) {
         res.push(stock.symbol);
     });
 
@@ -21,9 +21,16 @@ function getStockSymbolsWithForEach(data) {
 } 
 
 // map
-function getStockSymbolsWithMap(data) {
-    return data.map(function (stock) {
+function getStocksSymbolsWithMap(stocks) {
+    return stocks.map(function (stock) {
         return stock.symbol;
+    });
+}
+
+// filter
+function getStocksOver(stocks,minPrice) {
+    return stocks.filter(function (stock) {
+        return stock.price >= minPrice;
     });
 }
 ```
