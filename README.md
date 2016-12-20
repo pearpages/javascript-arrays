@@ -33,6 +33,17 @@ function getStocksOver(stocks,minPrice) {
         return stock.price >= minPrice;
     });
 }
+
+// filter and map combined
+function getFilteredStockSymbols(stocks) {
+    stocks
+        .filter(function(stock) {
+            return stock.price >= 150.00;
+        })
+        .map(function(stock) {
+            return stock.symbol;
+        });
+}
 ```
 
 ---
