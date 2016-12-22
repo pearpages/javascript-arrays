@@ -304,3 +304,59 @@ console.log(elements);
 ```javascript
 // checks that all the elements have the same property
 ```
+
+---
+
+## Using Observables
+
+### Old Way
+
+```javascript
+var button = document.createElement("BUTTON");        // Create a <button> element
+var text = document.createTextNode("CLICK ME");       // Create a text node
+button.appendChild(text);                                // Append the text to <button>
+document.body.appendChild(button);    
+
+var handler = function(e) {
+    alert('clicked');
+    button.removeEventListener('click',handler);
+};
+
+button.addEventListener('click',handler); // so the event handler only works once
+```
+
+### Using Observables
+
+```javascript
+var button = document.createElement("BUTTON");        // Create a <button> element
+var text = document.createTextNode("CLICK ME");       // Create a text node
+button.appendChild(text);                                // Append the text to <button>
+document.body.appendChild(button);    
+
+var filename = 'https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.0.1/Rx.js';
+
+var fileref = document.createElement('script');
+fileref.setAttribute("type","text/javascript");
+fileref.setAttribute("src", filename);
+fileref.onload = onLoad;
+document.getElementsByTagName("head")[0].appendChild(fileref);
+
+function onLoad() {
+    var clicks = Rx.Observable.fromEvent(button,'click');
+
+    clicks.subscribe( function onNext(e) {
+            alert('clicked');   
+        }
+    );
+}
+
+```
+
+```javascript
+// load a js file dynamically
+var js = document.createElement("script");
+js.type = "text/javascript";
+js.src = filename;
+js.onload = onLoad;
+document.body.appendChild(js);
+```
